@@ -38,4 +38,7 @@ class MyRouter < Crouter::Router
 end
 
 puts "Listening on http://127.0.0.1:8989"
-HTTP::Server.new(8989, [HTTP::LogHandler.new, MyRouter.new]).listen
+server = HTTP::Server.new([HTTP::LogHandler.new, MyRouter.new])
+address = server.bind_tcp 8989
+server.listen
+
