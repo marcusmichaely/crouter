@@ -61,7 +61,7 @@ class MyRouter < Crouter::Router
   end
 
   get "/path/with(/optional(/:parts))" do
-    context.repsonse << "you passed #{params["parts"]? || "nothing"}"
+    context.response << "you passed #{params["parts"]? || "nothing"}"
   end
 
   put "/handle/with/controller", "MyController#my_action"
